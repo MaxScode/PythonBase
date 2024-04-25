@@ -16,7 +16,7 @@ drones = []
 drones.append(Drone(0, "one", "10.20.18.23", 85))
 drones.append(Drone(1, "two", "10.20.18.23", 85))
 
-UDP_IP = "10.127.232.98" #this needs to be the current IP of this computer. Can we grab it at runtime?
+UDP_IP = "192.168.4.122" #this needs to be the current IP of this computer. Can we grab it at runtime?
 
 UDP_PORT = 5005
 
@@ -25,14 +25,17 @@ root.geometry("400x400")
 
 frm = ttk.Frame(root, padding=10)
 frm.grid()
-ttk.Label(frm, text="hello world").grid(column = 0, row = 0)
-ttk.Label(frm, text="Drones List").grid(column = 0, row = 1)
-
+ttk.Label(frm, text="Drones List").grid(column = 1, row = 1)
+w = Button (root, text="test")
+w.place(x=140, y=0)
 listVar = StringVar(value = drones)
 droneList = Listbox(master = root, listvariable = listVar)
 
 droneList.grid(column = 0, row = 2)
 
+container = ttk.Frame(root, padding =10)
+container.grid()
+ttk.Label(container, text="Swarm Controls").grid(column = 0, row = 1)
 
 
 
